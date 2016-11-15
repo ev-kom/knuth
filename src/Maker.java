@@ -4,12 +4,17 @@ import euclid.*;
  */
 public class Maker {
     public static void main(String[] args) {
-        long timeStart = System.currentTimeMillis();
-
         EuclideanAlgorithm euclid = new EuclideanAlgorithm();
-        System.out.println(euclid.findGreatestDivisor(2166,6099));
+        long timeStart = 0;
+        long timeEnd = 0;
 
-        long timeEnd = System.currentTimeMillis();
+        timeStart = System.currentTimeMillis();
+
+        System.out.println(euclid.findGreatestDivisorOne(125,25));
+
+        timeEnd =System.currentTimeMillis();
         System.out.println(timeEnd - timeStart);
+
     }
+
 }
