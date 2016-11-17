@@ -3,6 +3,7 @@ package euclid;
 /**
  * Created by EKomarov on 15.11.2016.
  */
+
 public class EuclideanAlgorithm {
 
     public long findGreatestDivisorOne(long m, long n) {
@@ -26,4 +27,25 @@ public class EuclideanAlgorithm {
         }
         return 0;
     }
+
+    public long[] findGreatestDivisorCommon(long m, long n){
+        long out[] = new long[3];
+        long a$ = 1, b = 1, a = 0, b$ = 0, c = m, d = n;
+        long r = 1, t, q;
+        while(true) {
+            q = c / d;
+            r = c % d;
+            if (r == 0) {
+                out[0] = a;
+                out[1] = b;
+                out[2] = d;
+                return out;
+            }
+            c = d;
+            d = r;
+            a = (t = a$) - q * (a$ = a);
+            b = (t = b$) - q * (b$ = b);
+        }
+    }
+
 }
