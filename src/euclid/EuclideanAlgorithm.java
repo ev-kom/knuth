@@ -31,7 +31,7 @@ public class EuclideanAlgorithm {
     public long[] findGreatestDivisorCommon(long m, long n){
         long out[] = new long[3];
         long a$ = 1, b = 1, a = 0, b$ = 0, c = m, d = n;
-        long r = 1, t, q;
+        long r, q;
         while(true) {
             q = c / d;
             r = c % d;
@@ -43,8 +43,8 @@ public class EuclideanAlgorithm {
             }
             c = d;
             d = r;
-            a = (t = a$) - q * (a$ = a);
-            b = (t = b$) - q * (b$ = b);
+            a = a$ - q * (a$ = a);
+            b = b$ - q * (b$ = b);
         }
     }
 
